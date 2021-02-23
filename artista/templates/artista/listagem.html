@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1> RELATÓRIO ARTISTAS E MUSCICAS </h1>
+<ul>
+{% for musica in musicas %}
+
+    <li>
+      <b> <br/>Nome da Musica: </b> {{musica.nome}}
+        <br/> Data em que foi postada : {{musica.data_Post_Musc}}
+        <br/>Duração: {{musica.duracao}}"s"
+        <b><br/>Nome do artista:</b> {{musica.artista}}
+        <br/> Obeservações: {{musica.obesrvacoes}}
+
+        {% if musica.youtube %}
+           <br/>Disponível no YouTube
+        {% else %}
+            <br/>Não está disponível no YouTube -
+        {% endif %}
+
+         {% if musica.spotify %}
+           <br/> Disponível no Spotify<br/>
+        {% else %}
+           <br/> Não está disponível no Spotify -<br/>
+        {% endif %}
+
+    </li>
+
+
+
+{% endfor %}
+</ul>
+<button><a href="{% url 'url_nova' %}"> Novo</a></button>
+
+</body>
+</html>
