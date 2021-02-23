@@ -13,24 +13,25 @@
 {% for musica in musicas %}
 
     <li>
-      <b> <br/>Nome da Musica: </b> {{musica.nome}}
-        <br/> Data em que foi postada : {{musica.data_Post_Musc}}
-        <br/>Duração: {{musica.duracao}}"s"
-        <b><br/>Nome do artista:</b> {{musica.artista}}
-        <br/> Obeservações: {{musica.obesrvacoes}}
+        <a href="{% url 'url_update' musica.id %}">
+            <b> <br/>Nome da Musica: </b> {{musica.nome}}
+            <br/> Data em que foi postada : {{musica.data_Post_Musc}}
+            <br/>Duração: {{musica.duracao}}"s"
+            <b><br/>Nome do artista:</b> {{musica.artista}}
+            <br/> Obeservações: {{musica.obesrvacoes}}
 
-        {% if musica.youtube %}
-           <br/>Disponível no YouTube
-        {% else %}
-            <br/>Não está disponível no YouTube -
-        {% endif %}
+            {% if musica.youtube %}
+               <br/>Disponível no YouTube
+            {% else %}
+                <br/>Não está disponível no YouTube -
+            {% endif %}
 
-         {% if musica.spotify %}
-           <br/> Disponível no Spotify<br/>
-        {% else %}
-           <br/> Não está disponível no Spotify -<br/>
-        {% endif %}
-
+             {% if musica.spotify %}
+               <br/> Disponível no Spotify<br/>
+            {% else %}
+               <br/> Não está disponível no Spotify -<br/>
+            {% endif %}
+        </a>
     </li>
 
 
