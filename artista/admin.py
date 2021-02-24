@@ -5,3 +5,4 @@ from.models import Musica
 admin.site.register(Artista)
 admin.site.register(Musica)
 
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório</title>
+</head>
+<body>
+
+<form action="{% url 'url_excel' %}" method="POST">
+  {% csrf_token %}
+<select required name="artista">
+   <option value="">Selecione o artista</option>
+ {% for artista in artistas %}
+   <option value="{{artista.id }}">{{ artista.nome }}</option>
+ {% endfor %}
+</select>
+  <button type="submit">Criar relatório</button>
+</form>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from.models import Musica
 from.models import Artista
 from.form import MusicaForm
+from openpyxl import Workbook
+from openpyxl.writer.excel import save_virtual_workbook
 
 
 import datetime
@@ -49,3 +51,33 @@ def delete(request, pk):
     musica= Musica.objects.get(pk=pk)
     musica.delete()
     return redirect('url_listagem')
+
+def excel(request):
+    idArtista = request.POST['artista']
+    workbook = Workbook()
+    worksheet = workbook.active
+
+    artista = Artista.objects.get(pk=idArtista)
+    musicas= artista.musicas.all()
+
+    # preencher cabeçalho
+    worksheet['A' + str(1)] = "Nome do artista"
+    worksheet['B' + str(1)] = "Nome da musica"
+
+
+    #preencher corpo da planilha
+    i=2
+    for musica in musicas:
+        worksheet['A' + str(i)] = musica.artista.nome
+        worksheet['B' + str(i)] = musica.nome
+        i+=1
+    response = HttpResponse(content=save_virtual_workbook(workbook))#, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=myexport.xlsx'
+    return response
+
+def relatorioArtista(request):
+    data = {}
+    artistas = Artista.objects.all()
+    data['artistas'] = artistas
+    return render(request, 'artista/relatorio.html', data)
+

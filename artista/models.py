@@ -16,7 +16,8 @@ class Musica(models.Model):
     duracao = models.PositiveIntegerField()
     youtube= models.BooleanField( default=False)
     spotify=models.BooleanField (default =False)
-    artista=models.ForeignKey(Artista,on_delete=models.CASCADE, null=True)
+    # songs permite acesso as musicas do artista
+    artista=models.ForeignKey(Artista, related_name='musicas', on_delete=models.CASCADE, null=True)
     obesrvacoes=models.TextField(null=True, blank=True)
     def __str__(self):
         return self.nome
