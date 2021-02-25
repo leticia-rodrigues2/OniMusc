@@ -1,4 +1,5 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'CSS/estilo.css' %}">
 </head>
 <body>
 <h1> RELATÓRIO ARTISTAS E MUSCICAS </h1>
@@ -15,10 +17,10 @@
     <li>
         <a href="{% url 'url_update' musica.id %}">
             <b> <br/>Nome da Musica: </b> {{musica.nome}}
-            <br/> Data em que foi postada : {{musica.data_Post_Musc}}
-            <br/>Duração: {{musica.duracao}}"s"
+            <b><br/> Data em que foi postada :</b> {{musica.data_Post_Musc}}
+            <b><br/>Duração:</b> {{musica.duracao}}s
             <b><br/>Nome do artista:</b> {{musica.artista}}
-            <br/> Obeservações: {{musica.obesrvacoes}}
+            <b><br/> Obeservações:</b> {{musica.obesrvacoes}}
 
             {% if musica.youtube %}
                <br/>Disponível no YouTube

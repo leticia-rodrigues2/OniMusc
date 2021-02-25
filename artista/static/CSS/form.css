@@ -1,0 +1,26 @@
+body {
+    background:#1F232B;
+    font-family: Source Sans Pro;
+}
+h1{
+  color:white;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+    text-align: center;
+}
+label {
+    cursor: default;
+    color: white;
+    font-size: larger;
+    margin-left:3%;
+}
+
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 30px;
+
+}

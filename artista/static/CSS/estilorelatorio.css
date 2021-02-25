@@ -1,0 +1,32 @@
+
+
+a :hover{
+    text-decoration: underline;
+}
+
+button  {
+
+    background: #414959;
+    border: none;
+    border-radius: 13%;
+    width: 104px;
+    height: 44px;
+    text-align: center;
+    margin-right: 0%;
+    margin-top: 50%;
+    margin-left:150%;
+    margin-left:570%;
+    text-align: center;
+    color: white;
+
+}
+
+
+
+
+select {
+  font-size: 20px;
+    margin-top:90%;
+    margin-left: 450%;
+    padding-left: 80%;
+    padding-right: 80%;

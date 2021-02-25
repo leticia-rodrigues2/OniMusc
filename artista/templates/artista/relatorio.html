@@ -1,10 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Relatório</title>
+    <link rel="stylesheet" href="{% static 'CSS/estilo.css' %}">
+     <link rel="stylesheet" href="{% static 'CSS/estilorelatorio.css' %}">
 </head>
 <body>
+
+<h1> RELATÓRIO ARTISTA E SUAS MUSCICAS </h1>
 
 <form action="{% url 'url_excel' %}" method="POST">
   {% csrf_token %}
