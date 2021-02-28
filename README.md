@@ -22,7 +22,7 @@ Como executar:
 4- Execute o projeto
 	python manage.py runserver
 ## detalhamento das decisões
-O excel não foi gerado na pasta admin, pois não consegui, porém para não ficar sem criar algo fiz uma tela para
+O excel não foi gerado na pasta admin, pois não consegui, porém para não ficar sem criar algo fiz uma tela para o relatório, onde vai conseguir baixar o excel.
 
 ## Referencias 
 https://www.udemy.com/course/django-20-aprendendo-os-conceitos-fundamentais/learn/lecture/9789164#overview
